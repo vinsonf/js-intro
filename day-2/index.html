@@ -4,24 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #mole {
+            height: 100px;
+            position: absolute;
+            
+        }
+    </style>
 </head>
 <body>
+    <h1>Score <span id="score"></span></h1>
 
-    <a href="page1/" >Page 1</a> 
-
-    <h1 style="color: red">Hello World</h1>
-
-
-
-
-
-
+    <img id="mole" src="https://www.clipartmax.com/png/full/28-288482_mole-clipart-whack-a-mole-from-whack-a-mole.png"/>
 
     <script>
 
-        let name = 'http://127.0.0.1:5500/z_scratch/day-2/#myJump'
-      
-        console.log(name);
+        const second = 1000;
+        const timeLimit = second * 8;
+        let timeRef;
+
+        setTimeout(function() {
+            clearTimeout(timeRef);
+            alert('you score was ' + playerScore);
+            playerScore = 0;
+            moleDisappears();
+        }, timeLimit);
+
+        let playerScore = 0;
+        const moleElement = document.querySelector('#mole');
+        let speed = 1000;
+        moleElement.addEventListener('click', () => {
+            playerScore += 40
+        });
+
+        function getRandom() {
+            const answer = Math.floor(Math.random() * 400);
+
+            return answer;
+        }
+
+        function moleAppears(time) {
+            timeRef = setTimeout(function() {
+                moleElement.style.display = 'block';
+                moleElement.style.top = getRandom() + 'px';
+                moleElement.style.left = getRandom() + 'px';
+                moleDisappears(speed - playerScore);
+                console.log(getRandom())
+            }, time); 
+        }
+
+        function moleIsHit() {
+
+        }
+
+        function moleDisappears(time) {
+            timeRef = setTimeout(function() {
+                const scoreElement = document.querySelector('#score');
+                moleElement.style.display = 'none';
+                scoreElement.innerHTML = playerScore;
+                moleAppears(speed - playerScore);
+            }, time);
+     
+        }
+
+        moleDisappears(1000);
+        
+        
     
     </script>
 
