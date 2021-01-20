@@ -19,48 +19,51 @@
     <img id="mole" src="https://www.clipartmax.com/png/full/28-288482_mole-clipart-whack-a-mole-from-whack-a-mole.png"/>
 
     <script>
+        
 
+        // How to create a Variable
         const second = 1000;
+        // How to create a Variable
         const timeLimit = second * 8;
+        // How to create a Variable
         let timeRef;
-
-        setTimeout(function() {
-            clearTimeout(timeRef);
-            alert('you score was ' + playerScore);
-            playerScore = 0;
-            moleDisappears();
-        }, timeLimit);
-
         let playerScore = 0;
-        const moleElement = document.querySelector('#mole');
         let speed = 1000;
-        moleElement.addEventListener('click', () => {
-            playerScore += 40
-        });
 
+
+        // How to find an element on the page
+        const moleElement = document.querySelector('#mole');
+        // How to find an element on the page
+        const scoreElement = document.querySelector('#score');
+
+
+  
+        // How to add a listener
+        moleElement.addEventListener('click', moleIsHit);
+
+        // How to create function
         function getRandom() {
             const answer = Math.floor(Math.random() * 400);
-
             return answer;
         }
 
+           // How to create function
         function moleAppears(time) {
             timeRef = setTimeout(function() {
                 moleElement.style.display = 'block';
                 moleElement.style.top = getRandom() + 'px';
                 moleElement.style.left = getRandom() + 'px';
                 moleDisappears(speed - playerScore);
-                console.log(getRandom())
             }, time); 
         }
 
+           // How to create function
         function moleIsHit() {
-
+            playerScore += 40
         }
-
+   // How to create function
         function moleDisappears(time) {
             timeRef = setTimeout(function() {
-                const scoreElement = document.querySelector('#score');
                 moleElement.style.display = 'none';
                 scoreElement.innerHTML = playerScore;
                 moleAppears(speed - playerScore);
@@ -68,7 +71,14 @@
      
         }
 
-        moleDisappears(1000);
+        moleDisappears();
+
+        setTimeout(function() {
+            clearTimeout(timeRef);
+            alert('you score was ' + playerScore);
+            playerScore = 0;
+            moleDisappears();
+        }, timeLimit);
         
         
     
