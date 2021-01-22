@@ -17,12 +17,6 @@ const nav = `
 </nav>
 `;
 
-
-
-
-
-
-
 const main = `
 <main>
 
@@ -32,8 +26,6 @@ const main = `
 </main>
 `;
 
-
-
 const footer = `
 <footer>
 
@@ -42,7 +34,6 @@ const footer = `
     </ul>
 </footer>
 `;
-
 
 const loginPage = `
 login Page
