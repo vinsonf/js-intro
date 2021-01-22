@@ -27,6 +27,8 @@ const multipleTags = document.querySelectorAll('h1 span'); // all the items
 pTag.style.border = `${numbers === 21 ? 21 : 50}px solid red`;
 
 // Logic/ Choices
+
+// if / if else if / if else if else
 if (numbers === 21) {
     console.log('runs this code')
 } else if (numbers === 22) {
@@ -35,6 +37,7 @@ if (numbers === 21) {
     console.log('it was not 21 or 22')
 }
 
+// switch
 switch(numbers) {
     case 21:
         console.log('runs this code');
@@ -46,7 +49,7 @@ switch(numbers) {
             console.log('it was not 21 or 22')
 }
 
-
+// ternary
 numbers === 21 ? console.log('yes it is') : console.log('no its not');
 
 
