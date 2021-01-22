@@ -1,7 +1,7 @@
 
 // Primative
 const numbers = 23;
-const string = 'string' + "string" + `${numbers}     ${6}`;
+const string = 'string' + "string" + `${numbers}  ${7}`;
 const boolean = true;
 
 // Complex/ Containers
