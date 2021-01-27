@@ -19,12 +19,13 @@ document.body.appendChild(pTag);
 // Write text inside of a tag;
 pTag.innerHTML = string;
 // Select Tags
-const oneTag = document.querySelector('h1.test'); // one item
-const multipleTags = document.querySelectorAll('h1 span'); // all the items
+const oneTag = document.querySelector('h1.test'); // one item (object)
+const multipleTags = document.querySelectorAll('h1 span'); // all the items (list/ array)
 
 // CSS
 // Change the style of something
 pTag.style.border = `${numbers === 21 ? 21 : 50}px solid red`;
+pTag.classList.add('active');
 
 // Logic/ Choices
 
