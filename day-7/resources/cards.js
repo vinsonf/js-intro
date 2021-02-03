@@ -6,8 +6,8 @@ const colors = ['red', 'black'];
 function createDeck() {
     const deck = [];
 
+    // actually create deck;
     for (let i = 0; i < 52; i++) {
-    
         const suit = i % 4;
         const color = i % 2;
         const value = i % 13;
@@ -16,6 +16,7 @@ function createDeck() {
     
     }
     
+    // sort order of value;
     deck.sort(function(a, b) {
         const isLarger = a.value > b.value;
         if (isLarger) {
@@ -27,7 +28,7 @@ function createDeck() {
     
     console.log('deck', deck);
     
-    
+    // build card html and map result
     return deck.map(function(item) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -44,8 +45,10 @@ function createDeck() {
    
 }
 
-
-createDeck().sort( () => Math.random() > .5 ? -1 : 1).forEach( (object) => {
+// executes the blueprint
+createDeck()
+.sort( () => Math.random() > .5 ? -1 : 1)  // randomize
+.forEach( (object) => { // add html to body;
          document.body.appendChild(object.card);
         object.card.innerHTML = `<span>${object.item.text}</span> <span>${object.item.suit}</span>  `
    
