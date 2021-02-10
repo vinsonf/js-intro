@@ -39,7 +39,7 @@ class Dog {
     }
 
    sit() {
-    console.log('this', this);
+        console.log('this', this);
        const div = document.createElement('div');
        document.body.appendChild(div);
        div.innerHTML = this.name + ' sits!';
