@@ -68,4 +68,4 @@ function myQuery(selector, nth) {
     return document.querySelectorAll(selector)[nth - 1];
 }
 
-document.body.innerHTML = '';
+// document.body.innerHTML = '';
