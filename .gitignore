@@ -1,4 +1,4 @@
 z_scratch/
 
-day-11/server/node_modules/
+/day-11/server/node_modules/
 node_modules/**
